@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<section class="content">
+  <section class="post_form">
+    <img class="twitter-img" src="{% static 'img/twitter.png' %}" />
+    <p class="mhead">Edit Page</p>
+    <form action="/edit/{{posts.id}}/" method="POST">
+      {% csrf_token %}
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        value="{{posts.name}}"
+      />
+      <input
+        name="body"
+        placeholder="tell me something"
+        value="{{posts.body}}"
+        required
+      />
+
+      <input type="file" id="files" name="image" /> <br />
+      <buttons class="cancelbtn"
+        ><a href="{% url 'home' %}" id="cancel" type="submit"
+          >Cancel</a
+        ></buttons
+      >
+      <input class="post_button" type="submit" value="Update" href="/" />
+    </form>
+    <script src="{% static 'js/posts.js' %}"></script>
+  </section>
+  {% endblock %}+
+</section>
