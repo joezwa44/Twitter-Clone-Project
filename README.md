@@ -1,6 +1,7 @@
 # Twitter-clone
 This is my Twitter Clone project, a sample web page of Twitter's clone. Users can post tweets and see everyone’s post. To make the project simple, I did not have a sign/login function. So there are no user accounts and follow function.
 
+[live deplyoment link]('https://twitter-clone-project.joezwa44.repl.co/')
 
 # Technologies Used
 * HTML
