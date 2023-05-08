@@ -4,7 +4,7 @@
   <section class="post_form">
     <img class="twitter-img" src="{% static 'img/twitter.png' %}" />
     <p class="mhead">Edit Page</p>
-    <form action="/edit/{{posts.id}}/" method="POST">
+    <form action="/edit/{{posts.id}}/" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
 
       <input
@@ -19,7 +19,13 @@
         value="{{posts.body}}"
         required
       />
-
+      {% if post.image.url %}
+      <img
+        src="{{post.image.url}}"
+        alt=""
+        style="width: 250px; height: 200px"
+      />
+      {% endif %}
       <input type="file" id="files" name="image" /> <br />
       <buttons class="cancelbtn"
         ><a href="{% url 'home' %}" id="cancel" type="submit"

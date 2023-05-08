@@ -1,9 +1,12 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
 <section class="content">
-  <section class="post_form">
+  <div class="header">
     <img class="twitter-img" src="{% static 'img/twitter.png' %}" />
     <p class="mhead">Home</p>
+  </div>
+  <section class="post_form">
+    
     <form action="/" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <input type="text" name="name" placeholder="Your name" required />
@@ -36,7 +39,7 @@
           <div class="datetime">{{ post.created_at }}</div>
           <p>{{ post.body }}</p>
           {% if post.image.url %}
-          <img src="{{post.image.url}}" alt="" style="width:400px; height:300px">
+          <img src="{{post.image.url}}" alt="" style="width:250px; height:200px">
           {% endif %}
           <form id="like_form" action="{% url 'likes' post.pk %}">
             <button class="like_button" type="submit" name="post_id" value="{{post.id}}">&#9825</button>
