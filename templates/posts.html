@@ -6,7 +6,7 @@
     <p class="mhead">Home</p>
   </div>
   <section class="post_form">
-    
+  
     <form action="/" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <input type="text" name="name" placeholder="Your name" required />
@@ -15,7 +15,7 @@
         placeholder="Tell us how you're feeling!!"
         required
       ></textarea>
-      <input type="file" id="files" name="image" required /> <br/>
+      <input type="file" id="files" name="image" /> <br/>
       <input class="post_button" type="submit" value="Tweet" />
     </form>
   </section>
@@ -39,7 +39,7 @@
           <div class="datetime">{{ post.created_at }}</div>
           <p>{{ post.body }}</p>
           {% if post.image.url %}
-          <img src="{{post.image.url}}" alt="" style="width:250px; height:200px">
+          <img src="{{post.image.url}}" alt="" style="width:250px; height:250px">
           {% endif %}
           <form id="like_form" action="{% url 'likes' post.pk %}">
             <button class="like_button" type="submit" name="post_id" value="{{post.id}}">&#9825</button>

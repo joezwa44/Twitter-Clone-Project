@@ -23,20 +23,20 @@ section.contents {
 /*
 post
 ***************************/
+
 .header{
   display: flex;
   padding-left: 10px;
   border-bottom: 1px solid #ccc;
 }
+
 .twitter-img {
-   
     width: 60px;
 }
 
 p.mhead {
   font-size: 2vw;
   font-weight: bold;
-  padding-left: 20px;
 }
 
 .post_form {
@@ -84,7 +84,7 @@ p.mhead {
   top: 40px;
   right: 15px;
   border: 1px solid rgb(209, 209, 209);
-  background-color: gray;
+  background-color: white;
   padding: 10px 15px;
   font-size: 13px;
   border-radius: 3px;
